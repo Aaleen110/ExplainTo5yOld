@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      Hello World
+      First ChatGPT Project
     </div>
   );
 }
