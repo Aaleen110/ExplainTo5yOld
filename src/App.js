@@ -6,8 +6,8 @@ import Speech from 'react-speech';
 const API_KEY = "YOUR_API_KEY";
 
 function App() {
-  const [query, setQuery] = useState("");
-  const [answer, setAnswer] = useState("");
+  const [query, setQuery] = useState("Query");
+  const [answer, setAnswer] = useState("this is some same answer processing");
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -61,13 +61,6 @@ function App() {
 
       {/* SKY */}
       <div className="sky-section">
-        <img className='sun' src={sun} alt="sun" />
-        <img className='mountain' src={mountain} alt="mountain" />
-        <img className='tree' src={tree} alt="tree" />
-        <img className='cloud-1' src={cloud} alt="cloud" />
-        <img className='cloud-2' src={cloud} alt="cloud" />
-        <img className='cloud-3' src={cloud} alt="cloud" />
-        <img className='cloud-4' src={cloud} alt="cloud" />
         <div className='box-container'>
           <h1 className='title'>Explain to a 5 year old</h1>
           <div className='search-box-container'>
@@ -80,6 +73,15 @@ function App() {
             <button onClick={() => askQuestion()} className='search-button'>Search!</button>
           </div>
         </div>
+
+        <img className='sun' src={sun} alt="sun" />
+        <img className='mountain' src={mountain} alt="mountain" />
+        <img className='tree' src={tree} alt="tree" />
+        <img className='cloud-1' src={cloud} alt="cloud" />
+        <img className='cloud-2' src={cloud} alt="cloud" />
+        <img className='cloud-3' src={cloud} alt="cloud" />
+        <img className='cloud-4' src={cloud} alt="cloud" />
+
       </div>
 
       {/* GRASS */}
