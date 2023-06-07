@@ -1,4 +1,4 @@
-.App {
+.container {
   text-align: center;
   flex: 1;
   height: 100vh;
@@ -11,6 +11,7 @@
   z-index: 1;
   position: absolute;
   top: 0;
+  z-index: 2;
 }
 
 .pin-wheel-container {
@@ -38,21 +39,6 @@
   .pin-wheel {
     animation: pin-wheel-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes pin-wheel-spin {
@@ -129,7 +115,7 @@
   display: flex;
 }
 
-.result-tablet{
+.result-tablet {
   background-color: #fff;
   height: 50vh;
   width: 60vw;
@@ -139,20 +125,20 @@
   overflow: scroll;
 }
 
-.box-container{
+.box-container {
   margin-top: 5%;
 }
 
-.search-box-container{
+.search-box-container {
   height: 60px;
   width: 50vw;
   position: relative;
 }
 
-.search-button{
+.search-button {
   position: absolute;
-  top:0px;
-  right:-16px;
+  top: 0px;
+  right: -16px;
   height: 100%;
   width: 150px;
   border-radius: 50px;
@@ -165,20 +151,20 @@
   font-weight: bold;
 }
 
-.search-box{
+.search-box {
   height: 100%;
   width: 100%;
   border-radius: 50px;
   border: 1px dotted #ccc;
   z-index: 1;
   font-size: 28px;
-  font-family:fantasy;
+  font-family: fantasy;
   padding-left: 16px;
 }
 
-.title{
+.title {
   padding: 16px;
-  font-family:fantasy;
+  font-family: fantasy;
   font-size: 40px;
   color: #333;
 }
@@ -192,7 +178,39 @@
   width: 100%;
   position: relative;
   align-items: center;
-  /* justify-content: center; */
+}
+
+.result-box-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 16px;
+}
+
+.result-box-inner {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #eee;
+}
+
+.result-title {
+  font-size: 28px;
+  font-family: fantasy;
+}
+
+.result-box-body {
+
+  display: flex;
+  font-size: 25px;
+  font-family: fantasy;
+  align-self: center;
+  padding: 20px;
 }
 
 .grass-section {
@@ -205,4 +223,3 @@
   justify-content: center;
   align-items: center;
 }
-
