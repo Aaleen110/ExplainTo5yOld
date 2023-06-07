@@ -3,7 +3,7 @@ import './App.css';
 import { pinwheel, sun, mountain, tree, cloud, goleft, goright } from './assets/svgs'
 import Speech from 'react-speech';
 
-const API_KEY = "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";
+const API_KEY = "YOUR_API_KEY";
 
 function App() {
   const [query, setQuery] = useState("");
