@@ -9,7 +9,7 @@ function App() {
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false)
 
-useEffect(() => {
+  useEffect(() => {
     // askQuestion();
   }, []);
 
