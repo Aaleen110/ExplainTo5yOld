@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { pinwheel, sun, mountain, tree, cloud, goleft, goright } from './assets/svgs'
-import Speech from 'react-speech';
 
 const API_KEY = "YOUR_API_KEY";
 
 function App() {
-  const [query, setQuery] = useState("Query");
-  const [answer, setAnswer] = useState("this is some same answer processing");
+  const [query, setQuery] = useState("");
+  const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false)
 
-  useEffect(() => {
+useEffect(() => {
     // askQuestion();
   }, []);
 
@@ -103,14 +102,6 @@ function App() {
           <div className='result-box-body'>{query.length ? answer : ''}</div>
         </div>
       </div>
-
-      <Speech
-        stop={true}
-        pause={true}
-        resume={true}
-        text="I am displaying all buttons"
-        displayText="Hello"
-      />
     </div>
   );
 }
