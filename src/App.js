@@ -11,8 +11,6 @@ function App() {
 
   async function askQuestion() {
     const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
-    console.log('hey');
-    return;
     if (query.length) {
 
       try {
