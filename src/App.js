@@ -1,47 +1,51 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
-import { pinwheel, sun, mountain, tree, cloud, goleft, goright } from './assets/svgs'
+import { pinwheel, sun, mountain, tree, cloud, goleft, goright } from './assets'
+import axios from 'axios';
 
-const API_KEY = "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";
+const API_KEY = "YOUR_API_KEY";
 
 function App() {
   const [query, setQuery] = useState("");
   const [answer, setAnswer] = useState("");
+  const [answerTitle, setAnswerTitle] = useState("");
   const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    // askQuestion();
-  }, []);
 
   async function askQuestion() {
     if (query.length) {
-      setLoading(true)
-      const apiMessages = [{ "role": "user", "content": `Explain to a five year old, what is ${query}` }]
-      const apiRequestBody = {
-        "model": "gpt-3.5-turbo",
-        "messages": [...apiMessages]
-      }
 
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: "POST",
-        headers: {
+      try {
+        setLoading(true)
+
+        const headers = {
           "Authorization": "Bearer " + API_KEY,
           "Content-Type": "application/json"
-        },
-        body: JSON.stringify(apiRequestBody)
-      }).catch(error => {
-        setLoading(false)
-        alert(error)
-      });
+        }
 
-      const responseJSON = await response.json();
-      if (responseJSON && responseJSON.choices.length) {
-        let answer = responseJSON?.choices[0]?.message?.content;
-        setAnswer(answer)
+        const apiMessages = [{ "role": "user", "content": `Explain to a five year old, what is ${query}` }]
+
+        const apiRequestBody = {
+          "model": "gpt-3.5-turbo",
+          "messages": [...apiMessages]
+        }
+
+        const response = await axios.post('https://api.openai.com/v1/chat/completions', JSON.stringify(apiRequestBody), {
+          headers: headers
+        })
+        if (response && response.data.choices.length) {
+          let answer = response.data?.choices[0]?.message?.content;
+          setAnswer(answer)
+          setAnswerTitle(query)
+          setLoading(false)
+        } else {
+          alert('Something went wrong!')
+          setLoading(false)
+        }
+
+      } catch (error) {
+        alert('Something went wrong');
         setLoading(false)
-      } else {
-        alert('Something went wrong!')
-        setLoading(false)
+        console.log("Error: ", JSON.stringify(error))
       }
     }
   }
@@ -49,14 +53,13 @@ function App() {
   function reset() {
     setAnswer("")
     setQuery("")
+    setAnswerTitle("")
   }
 
   return (
     <div className="container">
       {loading ?
         <div style={{ height: '100vh', width: '100vw', position: 'absolute', zIndex: 2, backgroundColor: '#000', opacity: 0.5, display: 'flex', justifyContent: 'center', alignItems: 'center' }}></div> : false}
-
-
 
       {/* SKY */}
       <div className="sky-section">
@@ -94,7 +97,7 @@ function App() {
             <div className='result-box-inner'>
               <img className='paw' src={goleft} alt="goleft" />
               <div className='result-title'>
-                {answer.length ? query : ''}
+                {answerTitle}
               </div>
               <img className='paw' src={goright} alt="goright" />
             </div>
