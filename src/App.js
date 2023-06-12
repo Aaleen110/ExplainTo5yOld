@@ -3,8 +3,6 @@ import './App.css';
 import { pinwheel, sun, mountain, tree, cloud, goleft, goright } from './assets'
 import axios from 'axios';
 
-const API_KEY = "YOUR_API_KEY";
-
 function App() {
   const [query, setQuery] = useState("");
   const [answer, setAnswer] = useState("");
@@ -12,6 +10,9 @@ function App() {
   const [loading, setLoading] = useState(false)
 
   async function askQuestion() {
+    const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+    console.log('hey');
+    return;
     if (query.length) {
 
       try {
@@ -45,7 +46,7 @@ function App() {
       } catch (error) {
         alert('Something went wrong');
         setLoading(false)
-        console.log("Error: ", JSON.stringify(error))
+        // console.log("Error: ", JSON.stringify(error))
       }
     }
   }
