@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { pinwheel, sun, mountain, tree, cloud, goleft, goright } from './assets/svgs'
 
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "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";
 
 function App() {
   const [query, setQuery] = useState("");
