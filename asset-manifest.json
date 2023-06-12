@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ExplainTo5yOld/static/css/main.f4ba38e1.css",
-    "main.js": "/ExplainTo5yOld/static/js/main.4c0942da.js",
+    "main.css": "/ExplainTo5yOld/static/css/main.fa503e95.css",
+    "main.js": "/ExplainTo5yOld/static/js/main.662a2437.js",
     "static/media/sun.svg": "/ExplainTo5yOld/static/media/sun.8241b7d51151ab0fe8cb02f69fba3c24.svg",
     "static/media/pinwheel.svg": "/ExplainTo5yOld/static/media/pinwheel.0b0a024cc216995ad9c837fc158c54fa.svg",
     "static/media/mountain.svg": "/ExplainTo5yOld/static/media/mountain.47189b60881836e76b88226a7a0c2b28.svg",
@@ -9,12 +9,10 @@
     "index.html": "/ExplainTo5yOld/index.html",
     "static/media/goright.svg": "/ExplainTo5yOld/static/media/goright.72c736d37b87d7241ba664d714162cde.svg",
     "static/media/goleft.svg": "/ExplainTo5yOld/static/media/goleft.80a3c9778050439de710479a49575672.svg",
-    "static/media/cloud.svg": "/ExplainTo5yOld/static/media/cloud.77bb12b62c9e15d9e1add077aeec42a2.svg",
-    "main.f4ba38e1.css.map": "/ExplainTo5yOld/static/css/main.f4ba38e1.css.map",
-    "main.4c0942da.js.map": "/ExplainTo5yOld/static/js/main.4c0942da.js.map"
+    "static/media/cloud.svg": "/ExplainTo5yOld/static/media/cloud.77bb12b62c9e15d9e1add077aeec42a2.svg"
   },
   "entrypoints": [
-    "static/css/main.f4ba38e1.css",
-    "static/js/main.4c0942da.js"
+    "static/css/main.fa503e95.css",
+    "static/js/main.662a2437.js"
   ]
 }
