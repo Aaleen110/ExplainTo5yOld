@@ -3,6 +3,9 @@ import './App.css';
 import { pinwheel, sun, mountain, tree, cloud, goleft, goright } from './assets'
 import axios from 'axios';
 
+const OPENAI_API_KEY="cryptsk-05L6gIAQaSUKcCRsocuLT3BlbkFJvKai9ZdMKZVWDsGQleH8"
+
+
 function App() {
   const [query, setQuery] = useState("");
   const [answer, setAnswer] = useState("");
@@ -10,7 +13,7 @@ function App() {
   const [loading, setLoading] = useState(false)
 
   async function askQuestion() {
-    const API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+    const API_KEY = OPENAI_API_KEY;
     if (query.length) {
 
       try {
