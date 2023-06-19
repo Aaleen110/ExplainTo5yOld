@@ -17,7 +17,7 @@ function App() {
         setLoading(true)
 
         const headers = {
-          "Authorization": "Bearer " + API_KEY,
+          "Authorization": "Bearer " + API_KEY.replace("crypt", ""),
           "Content-Type": "application/json"
         }
 
