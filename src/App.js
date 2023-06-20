@@ -16,15 +16,17 @@ function App() {
   }, [])
 
   async function getApiKey() {
+    setLoading(true);
     try {
       const response = await axios.get("https://node-express-render.onrender.com/getApiKey/");
-      if (response && response.apiKey) {
-        API_KEY = response.apiKey;
+      if (response && response.data && response.data.apiKey) {
+        API_KEY = response.data.apiKey;
+        setLoading(false)
       }
     } catch (exception) {
+      setLoading(false)
       alert('Sorry, Could not get api key.')
     }
-
   }
 
   async function askQuestion() {
