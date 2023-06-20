@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ExplainTo5yOld/static/css/main.fa503e95.css",
-    "main.js": "/ExplainTo5yOld/static/js/main.56191e72.js",
+    "main.js": "/ExplainTo5yOld/static/js/main.0d1605f3.js",
     "static/media/sun.svg": "/ExplainTo5yOld/static/media/sun.8241b7d51151ab0fe8cb02f69fba3c24.svg",
     "static/media/pinwheel.svg": "/ExplainTo5yOld/static/media/pinwheel.0b0a024cc216995ad9c837fc158c54fa.svg",
     "static/media/mountain.svg": "/ExplainTo5yOld/static/media/mountain.47189b60881836e76b88226a7a0c2b28.svg",
@@ -13,6 +13,6 @@
   },
   "entrypoints": [
     "static/css/main.fa503e95.css",
-    "static/js/main.56191e72.js"
+    "static/js/main.0d1605f3.js"
   ]
 }
