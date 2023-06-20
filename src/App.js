@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import { pinwheel, sun, mountain, tree, cloud, goleft, goright } from './assets'
 import axios from 'axios';
 
-const OPENAI_API_KEY="cryptsk-05L6gIAQaSUKcCRsocuLT3BlbkFJvKai9ZdMKZVWDsGQleH8"
-
+let API_KEY = "ENTER_YOUR_API_KEY"
 
 function App() {
   const [query, setQuery] = useState("");
@@ -12,13 +11,26 @@ function App() {
   const [answerTitle, setAnswerTitle] = useState("");
   const [loading, setLoading] = useState(false)
 
-  async function askQuestion() {
-    const API_KEY = OPENAI_API_KEY;
-    if (query.length) {
+  useEffect(() => {
+    getApiKey();
+  }, [])
 
+  async function getApiKey() {
+    try {
+      const response = await axios.get("https://node-express-render.onrender.com/getApiKey/");
+      if (response && response.apiKey) {
+        API_KEY = response.apiKey;
+      }
+    } catch (exception) {
+      alert('Sorry, Could not get api key.')
+    }
+
+  }
+
+  async function askQuestion() {
+    if (query.length) {
       try {
         setLoading(true)
-
         const headers = {
           "Authorization": "Bearer " + API_KEY.replace("crypt", ""),
           "Content-Type": "application/json"
@@ -47,7 +59,6 @@ function App() {
       } catch (error) {
         alert('Something went wrong');
         setLoading(false)
-        // console.log("Error: ", JSON.stringify(error))
       }
     }
   }
